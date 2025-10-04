@@ -1,1 +1,71 @@
 /*  your css code here. If applicable */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.modal {
+    display: none;        /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background: rgba(0,0,0,0.3);
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+}
+
+.modal.show {
+    display: flex;
+    animation: fadeIn 0.2s;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: #fff;
+    border-radius: 8px;
+    width: 350px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+    animation: slideDown 0.2s;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-70px); }
+    to { transform: translateY(0); }
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 22px 10px 22px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    color: #777;
+    font-size: 1.6em;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-body {
+    padding: 20px 22px;
+    font-size: 1em;
+}
